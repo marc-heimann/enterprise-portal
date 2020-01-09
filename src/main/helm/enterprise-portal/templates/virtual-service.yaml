@@ -1,0 +1,26 @@
+{{ range $.Values.services }}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .name }}
+  namespace: {{ $.Release.Namespace }}
+  labels: 
+    app.kubernetes.io/name: {{ $.Chart.Name }}
+    helm.sh/chart: {{ $.Chart.Name }}
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+    app.kubernetes.io/managed-by: {{ $.Release.Service }}
+    app.kubernetes.io/part-of: {{ $.Chart.Name }}
+    app.kubernetes.io/version: ${project.version}
+    app: {{ $.Chart.Name }}
+spec:
+  hosts:
+  - {{ .host }}
+  http:
+  - route:
+    - destination:
+        host: {{ .host }}
+        {{- range .subsets }}
+        subset: {{ .name }}
+        {{- end }}
+{{ end }}

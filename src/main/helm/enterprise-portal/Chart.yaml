@@ -1,0 +1,20 @@
+apiVersion: v1
+name: enterprise-portal
+description: This application deals with enterprise portal screens.
+version: 0.1.0
+categories:
+  - SynQ X
+  - Enterprise Portal
+appVersion: 0.1.0
+keywords:
+  - Enterprise Portal Screens
+maintainers:
+  - name: Marc Heimann 
+    email: marc.heimann@swisslog.com
+  - name: Maximilian Grobe 
+    email: maximilian.grobe@swisslog.com
+home: 
+sources:
+  - http://gitlab.swisslog.net/g7grobm/enterprise-portal-java.git
+icon: https://www.swisslog.com/-/media/swisslog/images/logistics-warehouse-distribution-automation/software/synq/synq-wms_header.jpg
+#icon: https://www.swisslog.com/-/media/swisslog/images/system/swisslog-logo-small.png

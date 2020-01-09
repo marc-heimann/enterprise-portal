@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+  <interactiveMode>false</interactiveMode>
+
+  <servers>
+    <server>
+      <id>nexus-snapshots</id>
+      <username>nexusdeployer</username>
+      <password>swisslog</password>
+    </server>
+    <server>
+      <id>nexus-releases</id>
+      <username>releasedeployer</username>
+      <password>swisslog</password>
+    </server>
+    <server>
+      <id>gitlab.swisslog.net</id>
+      <username>jenkins</username>
+      <password>swisslog</password>
+    </server>
+    <server>
+      <id>confluence_server</id>
+      <username>documentationpublisher</username>
+      <password>swisslog</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://10.49.145.193:8080/repository/maven-group/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+
+</settings>

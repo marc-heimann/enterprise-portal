@@ -1,0 +1,115 @@
+.swisslog-logo {
+	height: 60px;
+	padding: 5px;
+}
+html,body {
+    height: 92%; 
+    margin-top:0; 
+    margin-bottom:0;
+    background-color: #161616;
+    color: #ffffff;
+}
+.h_iframe iframe {
+    width:100%;
+    height:100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*-webkit-transform:scale(0.5);-moz-transform-scale(0.5);*/
+}
+.h_iframe {
+    height: 100%;
+}
+
+.h_iframe img{
+    height: 100%;
+    width: 100%;
+}
+.enterpriseHeader {
+	font-size:30px;
+	position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    border-collapse: collapse;
+    border-width: 0px 0px 0px 0px;
+    border-color: #000000;
+    border-style: solid;
+	background: #000000/* Standard syntax for IE 10 above and Edge */;
+}
+.portalHead {
+	vertical-align: sub;
+	padding-left: 10px;
+	color: #e0001e;
+	text-decoration: none;
+}
+.portalHead:hover {
+	color: #ffffff;
+}
+
+.swisslog-logo {
+	float: right;
+}
+
+/* Style page content */
+.main {
+  margin-left: 300px; /* Same as the width of the sidebar */
+  margin-top: 70px;
+  padding: 0px 10px;
+  height: 100%;
+}
+.main-full {
+  margin-left: 50px; /* Same as the width of the sidebar */
+  margin-top: 70px;
+  padding: 0px 10px;
+  height: 100%;
+}
+
+.ui-button-icon-only {
+	background: none;
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+
+.ui-button-icon-only:hover {
+	box-shadow: 0px 0px 3px 1px #14C8DC;
+	background: linear-gradient(to bottom, #8F999E, #627077);
+	border: 1px solid #1E323C;
+	border-radius: 5px;
+}
+.iconClose {
+	height: 15px;
+	width: 15px;
+	margin-left: 0px;
+}
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  width: 100%;
+  color: black;
+  text-align: center;
+  z-index: 2;
+  height: 35px;
+  background: linear-gradient(#B7BDC1, #FFFFFF);
+}
+
+.hide {
+    display:none;
+}
+
+td {
+    vertical-align: top;
+}
+
+ul {
+	margin-bottom: 0px;
+}

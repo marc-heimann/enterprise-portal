@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Enterprise Portal Application</title>
+	<link rel="icon" href="./favicon.ico">
+	<!-- Bootstrap css --> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Custom css -->
+		<!-- old css -->
+			<link rel="stylesheet" class="custom-style old-style" id="oldMainstyle" type="text/css" href="./cssold/main.css">
+			<link rel="stylesheet" class="custom-style old-style" id="oldSidestyle" type="text/css" href="./cssold/sideNav.css">
+			<link rel="stylesheet" class="custom-style old-style" id="oldTopstyle" type="text/css" href="./cssold/topBar.css">
+			<link rel="stylesheet" class="custom-style old-style" id="oldOverstyle" type="text/css" href="./cssold/overlay.css">
+			<link rel="stylesheet" class="custom-style old-style" id="oldCookiestyle" type="text/css" href="./cssold/cookie.css">
+		<!-- light css -->
+			<link rel="stylesheet" class="custom-style light-style" id="lightMainstyle" type="text/css" href="./csslight/main.css">
+			<link rel="stylesheet" class="custom-style light-style" id="lightSidestyle" type="text/css" href="./csslight/sideNav.css">
+			<link rel="stylesheet" class="custom-style light-style" id="lightTopstyle" type="text/css" href="./csslight/topBar.css">
+			<link rel="stylesheet" class="custom-style light-style" id="lightOverstyle" type="text/css" href="./csslight/overlay.css">
+			<link rel="stylesheet" class="custom-style light-style" id="lightCookiestyle" type="text/css" href="./csslight/cookie.css">
+		<!-- dark css -->
+			<link rel="stylesheet" class="custom-style dark-style" id="darkMainstyle" type="text/css" href="./cssdark/main.css">
+			<link rel="stylesheet" class="custom-style dark-style" id="darkSidestyle" type="text/css" href="./cssdark/sideNav.css">
+			<link rel="stylesheet" class="custom-style dark-style" id="darkTopstyle" type="text/css" href="./cssdark/topBar.css">
+			<link rel="stylesheet" class="custom-style dark-style" id="darkOverstyle" type="text/css" href="./cssdark/overlay.css">
+			<link rel="stylesheet" class="custom-style dark-style" id="darkCookiestyle" type="text/css" href="./cssdark/cookie.css">
+</head>
+
+<body>
+	<div id="overlay" class="ui-widget-overlay ui-dialog-mask hide" style="z-index: 1000;"></div>
+	<div style="height: 100%;">
+		<div class="enterpriseHeader">
+			<a id="portalHead" href="javascript:window.location.href=window.location.href" class = "portalHead">Enterprise Portal</a>
+			<a><img class="swisslog-logo" src="./images/swisslog.png" alt="swisslog logo"></a>
+		</div>
+		<!-- Side navigation -->
+		<div class="sidenav" id="sidenav">
+  				<div class="autocomplete" id="autocomplete" style="width:100%;">
+    				<input id="searchService" type="text">
+    				<span class="tooltiptext">Quick Search</span>
+  				</div>
+		</div>
+		<div id="enterpriseMenuSwitchDiv" class="enterpriseMenuSwitch">
+            <div class="separator_vertical separator_top"></div>
+            <div class="menu-rotate">MENU</div>
+            <img class="menu-chevron" id="menuSliderArrow" alt="slider left">
+        	<div class="separator_vertical separator_bottom"></div>
+		</div>
+		<div class = "main" id="main">
+			<div id="pageForm:enterpriseTitle" class="ui-toolbar ui-widget ui-widget-header ui-corner-all ui-helper-clearfix ettb" role="toolbar">
+				<div class="ui-toolbar-group-left" style="padding-top:9px;padding-left:10px;">
+                	<span class="etpt font_a3_bold">Welcome to Synchronized Intelligence</span>
+                </div>
+                <div class="ui-toolbar-group-right" style="padding-top:3px;">
+	            	<span>
+	            		<button id="button-mode" name="pageForm:tblHelpButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only custom-btn-flat-inverted" style="cursor:help;" title="General Screen Help" type="submit" role="button" aria-disabled="false" disabled>
+	            			<img class ="icon" alt="general help" src="./icons/github/white/book.svg">
+	            			<span class="ui-button-icon-left ui-icon ui-c ui-icon-generalhelp"></span>
+	            		</button>
+	                </span>
+	                <div class="divider"></div>
+                    <span>
+                    	<button id="button-about" name="pageForm:aboutButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only custom-btn-flat-inverted" style="cursor:help;" title="About..." type="submit" >
+                    		<img class ="icon" alt="about..." src="./icons/github/white/info.svg">
+                    		<span class="ui-button-icon-left ui-icon ui-c ui-icon-about"></span>
+                    	</button>
+                    </span>
+            	</div>
+			</div>
+		    <div class="h_iframe">
+		       	<iframe  frameborder="0" src="./images/portalBackground.png" id="frame" name="contentFrame" onload="activateTheme();"></iframe>
+		    </div>
+	    </div>
+	</div>
+	
+	<div id="aboutMessageBoxForm" class="hide">
+		<div id="aboutMessageBoxForm:aboutMessageBoxDialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container ui-draggable" style="width: 400px; height: auto; left: 40%; top: 211.5px; z-index: 1002; display: block;" role="dialog">
+			<div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top ui-draggable-handle">
+				<span id="aboutMessageBoxForm:aboutMessageBoxDialog_title" class="ui-dialog-title">About...</span>
+				<button id="aboutButtonClose" class="ui-button-icon-only ui-dialog-titlebar-close" aria-label="Close">
+					<img class ="iconClose" alt="close" src="./icons/fonta/solid/white/times.svg">
+				</button>
+			</div>
+			<div class="ui-dialog-content ui-widget-content" style="height: 450px;">
+				<div id="aboutMessageBoxForm:j_idt135" class=" ui-tabs ui-widget ui-widget-content ui-corner-all ui-hidden-container ui-tabs-top">
+					<ul class="ui-tabs-nav ui-helper-reset ui-widget-header ui-corner-all" role="tablist">
+						<button id="aboutButtonAbout" class="ui-state-default ui-tabs-selected ui-state-active ui-corner-top" role="tab" aria-expanded="true" aria-selected="true" tabindex="0">
+							<span>About</span>
+						</button>
+						<button id="aboutButtonLibraries" class="ui-state-default ui-corner-top" role="tab" aria-expanded="false" aria-selected="false" tabindex="-1">
+							<span>Libraries</span>
+						</button>
+					</ul>
+					<div class="ui-tabs-panels">
+					<div id="aboutTabAbout" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel">
+						<table>
+							<tbody>
+								<tr><td><b>Version Information</b></td><td><b>Developed by</b></td></tr>
+		                        <tr>
+									<td>
+										Certified components<br>Release: tbd<br>Build: tbd<br><br>
+		                                Project components<br>Release: tbd<br>Build: tbd<br><br>
+		                                <b>Contact </b><br>Swisslog AG<br>Webereiweg 3<br>CH-5033 Buchs<br><a href="http://www.swisslog.com" target="_blank">http://www.swisslog.com</a>
+									</td>
+									<td>
+										swisslog team
+									</td>
+								</tr>
+		                        <tr>
+									<td colspan="2"><br><b>Copyright</b></td>
+								</tr>
+								<tr>
+									<td colspan="2">This software module including the design and software principals used is and remains the property of Swisslog and is submitted with the understanding that it is not to be reproduced nor copied in whole or in part, nor licensed or otherwise provided or communicated to any third party without Swisslog's prior written consent. It must not be used in any way detrimental to the interests of Swisslog. Acceptance of this module will be construed as an agreement to the above.<br><br>All rights of Swisslog remain reserved. Swisslog and WarehouseManager are trademarks or registered trademarks of Swisslog. Other products and company names mentioned herein may be trademarks or trade names of their respective owners. Specifications are subject to change without notice.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+	                <div id="aboutTabLibraries" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden" role="tabpanel" hidden>
+						<b>Technologies:</b><br>node.js<br><br>
+	                    <table>
+	                      	<tbody>
+	                      		<tr><td><b>Library</b></td><td><b>Version</b></td><td><b>Licence</b></td></tr>
+								<tr><td>events</td><td>3.0.0</td><td>tbd</td></tr>
+								<tr><td>express</td><td>4.17.1</td><td>tbd</td></tr>
+								<tr><td>hashmap</td><td>2.3.0</td><td>tbd</td></tr>
+								<tr><td>http</td><td>0.0.0</td><td>tbd</td></tr>
+								<tr><td>kubernetes-client</td><td>8.3.3</td><td>tbd</td></tr>
+								<tr><td>openid-client</td><td>3.4.0</td><td>tbd</td></tr>
+								<tr><td>xmlhttprequest</td><td>1.8.0</td><td>tbd</td></tr>
+								<tr><td>github-octicons</td><td>tbd</td><td>MIT</td></tr>
+								<tr><td>font awesome free</td><td>tbd</td><td>CC BY 4.0</td></tr>
+	                       </tbody>
+	                  	</table>
+	                    <h1>Legend</h1>
+	                    <table>
+	                    	<tbody>
+	                    		<tr><td class="100px"><b>Abbreviation</b></td><td><b>Description</b></td></tr>
+	                            <tr><td>GPL</td><td><a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">General Public License</a></td></tr>
+	                            <tr><td>LGPL</td><td><a href="http://www.gnu.org/licenses/lgpl.html" target="_blank">Lesser General Public License</a></td></tr>
+	                            <tr><td>CPL</td><td><a href="http://www.opensource.org/licenses/cpl1.0.php" target="_blank">Common Public License</a></td></tr>
+	                            <tr><td>BSD</td><td><a href="http://www.opensource.org/licenses/bsd-license.php" target="_blank">Berkeley Software Distribution</a></td></tr>
+	                            <tr><td>OSL</td><td><a href="http://www.opensymphony.com/oscache/license.action" target="_blank">OpenSymphony Software License (modified Apache license)</a></td></tr>
+	                            <tr><td>Apache</td><td><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License</a></td></tr>
+	                            <tr><td>MIT</td><td><a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">Massachusetts Institute of Technology</a></td></tr>
+	                            <tr><td>[1]</td><td><a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">Creative Commons Attribution-ShareAlike 2.0</a></td></tr>
+	                            <tr><td>EPL</td><td><a href="http://www.eclipse.org/legal/epl-v10.html" target="_blank">Eclipse Public License</a></td></tr>
+	                            <tr><td>Jaxen</td><td><a href="http://jaxen.codehaus.org/license.html" target="_blank">Jaxen License</a></td></tr>
+	                            <tr><td>CDDL</td><td><a href="http://glassfish.java.net/public/CDDL+GPL.html" target="_blank">Common Development and Distribution License</a></td></tr>
+	                            <tr><td>JSON</td><td><a href="http://www.json.org/license.html" target="_blank">JSON License</a></td></tr>
+	                            <tr><td>OTNDDL</td><td><a href="http://www.oracle.com/technetwork/testcontent/distlic-091973.html" target="_blank">Oracle Technology Network Development and Distribution License</a></td></tr>
+							</tbody>
+						</table>
+	             	</div>
+	            </div>
+	     	</div>
+		</div>
+	</div>
+	</div>
+	<div id="cookie-banner" class="cookie cookie-banner" style="">
+		<div id="cookie-banner-wrapper" class="cookie cookie-banner-wrapper">
+			<div id="cookie-banner-main" class="cookie cookie-banner-main">
+				<div id="cookie-banner-desc" class="cookie cookie-banner-desc">
+					We use a cookies to save your theme and cookie choice. If you disagree you will not be able to use different themes.
+				</div>
+			</div>
+			<div id="cookie-banner-right" class="cookie cookie-banner-right">
+				<div id="cookie-banner-buttons" class="cookie cookie-banner-buttons">
+					<div id="cookie-banner-btn-disagree" class="cookie cookie-banner-btn cookie-banner-btn-disagree">Disagree</div>
+					<div id="cookie-banner-btn-agree" class="cookie cookie-banner-btn cookie-banner-btn-agree">Agree</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/recalculate.js" id="recalculate"></script>
+	<script src="./js/main.js" id="mainjs"></script>
+	<script>autocomplete(document.getElementById("searchService"));</script>
+</body>
+</html>

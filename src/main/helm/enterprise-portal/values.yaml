@@ -1,0 +1,84 @@
+# Default values for enterprise-portal.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: container.swisslog.net:30056/sl/enterprise-portal-java
+  tag: latest
+  pullPolicy: Always
+  imagePullSecret: nightly-regcred
+
+nameOverride: ""
+fullnameOverride: ""
+
+services:
+  - name: epds
+    enabled: true
+    type: ClusterIP
+    port: 80
+    targetport: http
+    host: epds
+    subsets:
+    - name: latest
+      labels:
+        version: nil
+    annotations: 
+      getambassador.io/config: |
+        ---
+        apiVersion: ambassador/v1
+        kind: Mapping
+        name: epds_get_mapping
+        prefix: /ep/
+        service: http://epds.default
+        method: GET
+        rewrite: ""
+  - name: socket
+    enabled: true
+    type: ClusterIP
+    port: 81
+    targetport: http-ws
+    host: socket
+    subsets:
+    - name: latest
+      labels:
+        version: nil
+    annotations: 
+      getambassador.io/config: |
+        ---
+        apiVersion: ambassador/v1
+        kind: Mapping
+        name: socket_get_mapping
+        prefix: /service/socket
+        service: ws://socket.default:81
+        use_websocket: true
+        rewrite: ""
+    
+ingress:
+  enabled: true
+  annotations: {"kubernetes.io/ingress.class": "istio"}
+  paths: ["/v1/epds/.*", "/service/socket/.*"]
+  hosts: []    
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {"kubernetes.io/os": "linux"}
+
+tolerations: []
+
+affinity: {}
